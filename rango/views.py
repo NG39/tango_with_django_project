@@ -11,6 +11,7 @@ def index(request):
 	context_dict = {'categories': category_list,'pages': page_list}
 	return render(request, 'rango/index.html', context=context_dict)
 	#return HttpResponse("Rango says hey there partner! <br/> <a href='/rango/about/'>About</a>")
+	
 def about(request):
 	return render(request, 'rango/about.html')
 
@@ -72,6 +73,5 @@ def add_page(request, category_name_slug):
             print(form.errors)
     context_dict = {'form': form, 'category': category}
     return render(request, 'rango/add_page.html', context_dict)
-
 
 
